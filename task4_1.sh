@@ -23,7 +23,7 @@ echo "Installation date:" $(ls -alct /|tail -1|awk '{print $6, $7, $8}')
 echo "Hostname:" $(hostname -f)
 echo "Uptime:" $(uptime -p | cut -d " " -f2-)
 echo "Processes running:" $(ps aux | wc -l)
-echo "User logged in:" $(who | sort -k1,1 -u | wc -l)
+echo "User logged in:" $(users|wc -w)
 echo "--- Network ---"
 for interface in $(ls /sys/class/net); do
      # echo $interface
